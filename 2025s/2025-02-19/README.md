@@ -7,6 +7,7 @@
 	- Later, moved to <kbd>Alt</kbd> + <kbd>Print Screen</kbd>
 	- Today, many keyboards don't provide the function at all.
 - Used today for debugging purposes
+	- Example: Linux's "magic SysRq key"
 - Commonly abbreviated "Sys Req" or "Sys Rq"
 
 # Configuration
@@ -66,3 +67,8 @@ When invoking functions with the keyboard, these command mappings assume a QWERT
 |z      |Dump the ftrace buffer                                                                                                                                                                                            |
 |0-9    |Sets the console log level, controlling which kernel messages will be printed to your console. (0, for example would make it so that only emergency messages like PANICs or OOPSes would make it to your console.)|
 |R      |Replay the kernel log messages on consoles.                                                                                                                                                                       |
+
+# Resources
+
+- <https://docs.kernel.org/admin-guide/sysrq.html>
+- <https://en.wikipedia.org/wiki/Magic_SysRq_key>
