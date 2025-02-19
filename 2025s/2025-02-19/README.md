@@ -38,12 +38,17 @@ Either:
 
 # How does it work?
 
-SysRq is built into the kernel.
-<https://github.com/torvalds/linux/blob/master/drivers/tty/sysrq.c>
+When writing a driver for a UART serial device, code authors include `serial_core.h` to have their driver interface with the operating system.
 
-Maybe we can add a few code snippets of line 583 onwards? If this is too dense, we can give a very brief outline of what happens?
+The `serial_core.h` file directly calls SysRq functionality from `sysrq.c`. As a result, SysRq-related functions are implemented directly into these drivers, and drivers can call `uart_handle_sysrq_char()` and therefore run debugging or system recovery operations at link-level. 
 
-There's also <https://github.com/torvalds/linux/blob/0ad2507d5d93f39619fc42372c347d6006b64319/kernel/debug/kdb/kdb_main.c#L1979C1-L1979C47> which shows how it's integrated into the kernel debugger.
+USB seems to also have this functionality, implemented in a somewhat similar way.
+
+More can be read here:
+- <https://www.kernel.org/doc/Documentation/serial/driver>
+- <https://github.com/torvalds/linux/blob/master/drivers/tty/sysrq.c>
+- <https://github.com/torvalds/linux/blob/6537cfb395f352782918d8ee7b7f10ba2cc3cbf2/include/linux/serial_core.h#L1170>
+- <https://github.com/torvalds/linux/blob/6537cfb395f352782918d8ee7b7f10ba2cc3cbf2/drivers/usb/serial/generic.c#L574>
 
 # Command keys
 
