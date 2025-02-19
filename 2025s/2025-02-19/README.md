@@ -45,6 +45,7 @@ The `serial_core.h` file directly calls SysRq functionality from `sysrq.c`. As a
 USB seems to also have this functionality, implemented in a somewhat similar way.
 
 More can be read here:
+
 - <https://www.kernel.org/doc/Documentation/serial/driver>
 - <https://github.com/torvalds/linux/blob/master/drivers/tty/sysrq.c>
 - <https://github.com/torvalds/linux/blob/6537cfb395f352782918d8ee7b7f10ba2cc3cbf2/include/linux/serial_core.h#L1170>
