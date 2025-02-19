@@ -90,12 +90,12 @@ When invoking functions with the keyboard, these command mappings assume a QWERT
 - You often use SysRq when something is wrong with your userland, though. Having a key is useful.
 - Manufacturers often use an alternative key combination for SysRq functionality. Check with your manufacturer on those details. Alternatively, you can implement the scancode-keycode mapping yourself. We will do it now on a Systemd Debian install using `evtest` and `udev`. `evtest` binaries are available in most package repositories. There are forks of `udev`, like `eudev` that establish the same functionality on non-Systemd systems.
 - First, run `evtest` without any options. It will give you a list of character devices. Pick your keyboard, which is hopefully easy to identify. Keep its event id in mind.
-- When you run `evtest`, each key press and release is associated with a scancode. Enter your key combination that you want to be SysRq. Remember that any time you hit <kdb>Alt</kdb> + <kbd>\<your keys\></kbd> you will be running invasive commands, so ensure that it's not something you can fat finger easily.
+- When you run `evtest`, each key press and release is associated with a scancode. Enter your key combination that you want to be SysRq. Remember that any time you hit <kbd>Alt</kbd> + [your keys] you will be running invasive commands, so ensure that it's not something you can fat finger easily.
 - Recall that event id from before. If you run `cat /sys/class/input/event<number>/device/modalias`, you can obtain a brief view of the `sysfs` kernel identifier for your device. Laptop keyboards aren't going anywhere, but this functionality is useful for a usb keyboard.
 - Now that we have this information, we can use `hwdb`. Go to `/etc/udev/hwdb.d/` and create a new file. For example, the demo can be `90-keyboard.hwdb`.
 - Paste that `modalias` identifier you got from before. On the next line, enter a single space and write the line: `KEYBOARD_KEY_<your scancode>=sysrq`.
 - Run `systemd-hwdb update; udevadm trigger` as root to load your new key-value pairs and update your device rules.
-- Switch to TTY and enter <kdb>Alt</kdb> + <kdb>\<your keys\></kdb> + <kbd>h</kbd>. If you see the same help menu, you did it!
+- Switch to TTY and enter <kbd>Alt</kbd> + [your keys] + <kbd>h</kbd>. If you see the same help menu, you did it!
 - For some reason, I don't know why this information doesn't appear under `udevadm info` for the device.
 
 # Resources
