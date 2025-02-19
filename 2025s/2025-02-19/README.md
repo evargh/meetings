@@ -28,11 +28,13 @@
 
 # Usage
 
-- Either:
-	- Press <kbd>Alt</kbd> + <kbd>SysRq</kbd> + [command key]
-	- Write [command key] to `/proc/sysrq-trigger`
-- "Fn" might be needed on some keyboards or laptops
-- ChromeBooks: <kbd>Alt</kbd> + <kbd>Volume Up (F10)</kbd> + [command key]
+Either:
+
+- Press <kbd>Alt</kbd> + <kbd>SysRq</kbd> + [command key]
+	- "Fn" might be needed on some keyboards or laptops
+	- Check your laptop's documentation for other possible key combinations (e.g., <kbd>Fn</kbd> + <kbd>s</kbd>)
+	- ChromeBooks: <kbd>Alt</kbd> + <kbd>Volume Up (F10)</kbd> + [command key]
+- Write [command key] to `/proc/sysrq-trigger`
 
 # How does it work?
 
