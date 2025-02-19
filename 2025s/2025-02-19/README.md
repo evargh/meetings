@@ -1,22 +1,22 @@
 # System Request: Introduction/History
 
 - BIOS software interrupt → signals OS to invoke low-level functions
-- Old software often bypassed the OS for keyboard input, so Sys Rq was used as a special key for switching between operating systems.
+- Old software often bypassed the OS for keyboard input, so SysRq was used as a special key for switching between operating systems.
 - Introduced with the IBM PC family in the mid-1980s
 - Originally given a dedicated key
 	- Later, moved to <kbd>Alt</kbd> + <kbd>Print Screen</kbd>
 	- Today, many keyboards don't provide the function at all.
-    - However, we will provide a quick demo on how to enable Sys Rq on an arbitrary keyboard.
+    - However, we will provide a quick demo on how to enable SysRq on an arbitrary keyboard.
 - Used today for debugging purposes
 	- Example: Linux's "magic SysRq key"
-- Commonly abbreviated "Sys Req" or "Sys Rq"
+- Commonly abbreviated "SysRq" or "Sys Req"
 
 # Configuration
 
 - Enable by building kernel with `CONFIG_MAGIC_SYSRQ` set.
 - `/proc/sys/kernel/sysrq` bitmask (read/write) for keyboard activation
-	- 0: disable all Sys Rq functions
-	- 1: enable all Sys Rq functions
+	- 0: disable all SysRq functions
+	- 1: enable all SysRq functions
 	- 0x2: enable control of console logging level
 	- 0x4: enable control of keyboard (SAK, unraw)
 	- 0x8: enable debugging dumps of processes etc.
