@@ -49,34 +49,35 @@ There's also <https://github.com/torvalds/linux/blob/0ad2507d5d93f39619fc42372c3
 
 When invoking functions with the keyboard, these command mappings assume a QWERTY layout.
 
-|Command|Function                                                                                                                                                                                                          |
-|-------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|b      |Will immediately reboot the system without syncing or unmounting your disks.                                                                                                                                      |
-|c      |Will perform a system crash and a crashdump will be taken if configured.                                                                                                                                          |
-|d      |Shows all locks that are held.                                                                                                                                                                                    |
-|e      |Send a SIGTERM to all processes, except for init.                                                                                                                                                                 |
-|f      |Will call the oom killer to kill a memory hog process, but do not panic if nothing can be killed.                                                                                                                 |
-|g      |Used by kgdb (kernel debugger)                                                                                                                                                                                    |
-|h      |Will display help (actually any other key than those listed here will display help. but h is easy to remember :-)                                                                                                 |
-|i      |Send a SIGKILL to all processes, except for init.                                                                                                                                                                 |
-|j      |Forcibly “Just thaw it” - filesystems frozen by the FIFREEZE ioctl.                                                                                                                                               |
-|k      |Secure Access Key (SAK): Kills all programs on the current virtual console. NOTE: See important comments below in SAK section.                                                                                    |
-|l      |Shows a stack backtrace for all active CPUs.                                                                                                                                                                      |
-|m      |Will dump current memory info to your console.                                                                                                                                                                    |
-|n      |Used to make RT tasks nice-able                                                                                                                                                                                   |
-|o      |Will shut your system off (if configured and supported).                                                                                                                                                          |
-|p      |Will dump the current registers and flags to your console.                                                                                                                                                        |
-|q      |Will dump per CPU lists of all armed hrtimers (but NOT regular timer_list timers) and detailed information about all clockevent devices.                                                                          |
-|r      |Turns off keyboard raw mode and sets it to XLATE.                                                                                                                                                                 |
-|s      |Will attempt to sync all mounted filesystems.                                                                                                                                                                     |
-|t      |Will dump a list of current tasks and their information to your console.                                                                                                                                          |
-|u      |Will attempt to remount all mounted filesystems read-only.                                                                                                                                                        |
-|v      |Forcefully restores framebuffer console                                                                                                                                                                           |
-|w      |Dumps tasks that are in uninterruptible (blocked) state.                                                                                                                                                          |
-|x      |Used by xmon interface on ppc/powerpc platforms. Show global PMU Registers on sparc64. Dump all TLB entries on MIPS.                                                                                              |
-|z      |Dump the ftrace buffer                                                                                                                                                                                            |
-|0-9    |Sets the console log level, controlling which kernel messages will be printed to your console. (0, for example would make it so that only emergency messages like PANICs or OOPSes would make it to your console.)|
-|R      |Replay the kernel log messages on consoles.                                                                                                                                                                       |
+|Command|Function                                                                                                                                                                                             |
+|-------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|b      |Immediately reboot the system without syncing or unmounting disks.                                                                                                                                   |
+|c      |Perform a system crash. A crashdump will be taken if configured.                                                                                                                                     |
+|d      |Show all locks that are held.                                                                                                                                                                        |
+|e      |Send a SIGTERM to all processes except init.                                                                                                                                                         |
+|f      |Call the OOM killer to kill a memory-hog process, but do not panic if nothing can be killed.                                                                                                         |
+|g      |Used by kgdb (kernel debugger)                                                                                                                                                                       |
+|h      |Display SysRq cheatsheet help message. (Any key not listed in this table will also display help.)                                                                                                    |
+|i      |Send a SIGKILL to all processes except init.                                                                                                                                                         |
+|j      |Forcibly “Just thaw it” - filesystems frozen by the FIFREEZE ioctl.                                                                                                                                  |
+|k      |Secure Access Key (SAK): Kill all programs on the current virtual console.                                                                                                                           |
+|l      |Show a stack backtrace for all active CPUs.                                                                                                                                                          |
+|m      |Dump current memory info to the console.                                                                                                                                                             |
+|n      |Make RT tasks nice-able.                                                                                                                                                                             |
+|o      |Shut the system off.                                                                                                                                                                                 |
+|p      |Dump the current registers and flags to the console.                                                                                                                                                 |
+|q      |Dump per-CPU lists of all armed hrtimers (but *not* regular timer_list timers) and detailed information about all clockevent devices.                                                                |
+|r      |Turn off keyboard raw mode and set it to XLATE.                                                                                                                                                      |
+|R      |Replay the kernel log messages on consoles.                                                                                                                                                          |
+|s      |Attempt to sync all mounted filesystems.                                                                                                                                                             |
+|t      |Dump a list of current tasks and their information to the console.                                                                                                                                   |
+|u      |Attempt to remount all mounted filesystems read-only.                                                                                                                                                |
+|v      |Forcefully restore framebuffer console.                                                                                                                                                              |
+|w      |Dump tasks that are in uninterruptible (blocked) state.                                                                                                                                              |
+|x      |(Not used on x86/x86_64)                                                                                                                                                                             |
+|z      |Dump the ftrace buffer.                                                                                                                                                                              |
+|0-9    |Sets the console log level, controlling which kernel messages will be printed to the console. (For example, 0 means that only emergency messages like PANICs or OOPSes would make it to the console.)|
+
 # How do I Use SysRq without a dedicated SysRq Key?
 
 - First, set your SysRq permissions. This can be done either through `proc` or `sysctl`.
