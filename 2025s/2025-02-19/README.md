@@ -103,3 +103,8 @@ When invoking functions with the keyboard, these command mappings assume a QWERT
 
 - <https://docs.kernel.org/admin-guide/sysrq.html>
 - <https://en.wikipedia.org/wiki/Magic_SysRq_key>
+- <https://en.wikipedia.org/wiki/System_request>
+- <https://www.kernel.org/doc/Documentation/serial/driver>
+- <https://github.com/torvalds/linux/blob/master/drivers/tty/sysrq.c>
+- <https://github.com/torvalds/linux/blob/6537cfb395f352782918d8ee7b7f10ba2cc3cbf2/include/linux/serial_core.h#L1170>
+- <https://github.com/torvalds/linux/blob/6537cfb395f352782918d8ee7b7f10ba2cc3cbf2/drivers/usb/serial/generic.c#L574>
